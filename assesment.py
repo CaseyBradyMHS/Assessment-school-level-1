@@ -185,3 +185,9 @@ What difficulty would you like?
 if difficulty == 1:
     user_answers_correct += questions_for_quiz(1)
     print(f"you have gotten {user_answers_correct} question(s) right")
+if difficulty == 2:
+    user_answers_correct += questions_for_quiz(2)
+    print(f"you have gotten {user_answers_correct} question(s) right")
+if difficulty == 3:
+    user_answers_correct += questions_for_quiz(3)
+    print(f"you have gotten {user_answers_correct} question(s) right")

@@ -84,29 +84,45 @@ def questions_for_quiz(difficulty_func):
         second_number_func = random.randint(1, 12)
         if what_operation == 1:
             answer_func = first_number_func + second_number_func
-            user_answer = num_check(f"What is {first_number_func} + {second_number_func}", -999999, 999999)
+            user_answer = num_check(f"What is {first_number_func} + {second_number_func}", 999999, 999999)
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
         elif what_operation == 2:
             answer_func = first_number_func - second_number_func
             user_answer = num_check(f"What is {first_number_func} - {second_number_func}", -999999, 999999)
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
         elif what_operation == 3:
             answer_func = first_number_func * second_number_func
             user_answer = num_check(f"What is {first_number_func} multiplied by {second_number_func}", -999999, 999999)
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
         elif what_operation == 4:
-            second_number_func_div = random.randint(2, 10)
-            answer_func = first_number_func / second_number_func_div
-            user_answer = num_check(f"What is {first_number_func} divided by {second_number_func_div}", -999999, 999999)
+            first_number_func_div = first_number_func * second_number_func
+            answer_func = first_number_func_div / first_number_func
+            user_answer = num_check(f"What is {first_number_func_div} divided by {first_number_func}", -999999, 999999)
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
     # medium mode
     elif difficulty_func == 2:
         first_number_func = random.randint(1, 40)
@@ -117,25 +133,41 @@ def questions_for_quiz(difficulty_func):
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
         elif what_operation == 2:
             answer_func = first_number_func - second_number_func
             user_answer = num_check(f"What is {first_number_func} - {second_number_func}", -999999, 999999)
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
         elif what_operation == 3:
             answer_func = first_number_func * second_number_func
             user_answer = num_check(f"What is {first_number_func} multiplied by {second_number_func}", -999999, 999999)
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
         elif what_operation == 4:
-            second_number_func_div = random.randint(2, 10)
-            answer_func = first_number_func / second_number_func_div
-            user_answer = num_check(f"What is {first_number_func} divided by {second_number_func_div}", -999999, 999999)
+            first_number_func_div = first_number_func * second_number_func
+            answer_func = first_number_func_div / first_number_func
+            user_answer = num_check(f"What is {first_number_func_div} divided by {first_number_func}", -999999, 999999)
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
     # hard mode
     elif difficulty_func == 3:
         first_number_func = random.randint(1, 100)
@@ -146,25 +178,41 @@ def questions_for_quiz(difficulty_func):
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
         elif what_operation == 2:
             answer_func = first_number_func - second_number_func
             user_answer = num_check(f"What is {first_number_func} - {second_number_func}", -999999, 999999)
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
         elif what_operation == 3:
             answer_func = first_number_func * second_number_func
             user_answer = num_check(f"What is {first_number_func} multiplied by {second_number_func}", -999999, 999999)
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
         elif what_operation == 4:
-            second_number_func_div = random.randint(2, 10)
-            answer_func = first_number_func / second_number_func_div
-            user_answer = num_check(f"What is {first_number_func} divided by {second_number_func_div}", -999999, 999999)
+            first_number_func_div = first_number_func * second_number_func
+            answer_func = first_number_func_div / first_number_func
+            user_answer = num_check(f"What is {first_number_func_div} divided by {first_number_func}", -999999, 999999)
             if user_answer == answer_func:
                 print("correct")
                 return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
     else:
         print("Something has gone wrong with the program. Please start again. ")
         quit()

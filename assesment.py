@@ -7,12 +7,12 @@ def num_check(question, low, high):
     valid = False
     while not valid:
 
-        num_error = f"Please enter a number that is higher than {low} and less than {high}. "
-        error = "Please enter a number. "
+        num_error = f"Please enter an integer that is higher than {low} and less than {high}. "
+        error = "Please enter an integer. "
 
         try:
             # ask for a number
-            response = float(input(question))
+            response = int(input(question))
 
             # check number is more than 0
             if low < response < high:
@@ -113,6 +113,8 @@ def questions_for_quiz(difficulty_func):
                 print(f"the correct answer was {answer_func}")
                 return 0
         elif what_operation == 4:
+            first_number_func = random.randint(1, 8)
+            second_number_func = random.randint(1, 8)
             first_number_func_div = first_number_func * second_number_func
             answer_func = first_number_func_div / first_number_func
             user_answer = num_check(f"What is {first_number_func_div} divided by {first_number_func}", -999999, 999999)
@@ -158,6 +160,8 @@ def questions_for_quiz(difficulty_func):
                 print(f"the correct answer was {answer_func}")
                 return 0
         elif what_operation == 4:
+            first_number_func = random.randint(1, 20)
+            second_number_func = random.randint(1, 20)
             first_number_func_div = first_number_func * second_number_func
             answer_func = first_number_func_div / first_number_func
             user_answer = num_check(f"What is {first_number_func_div} divided by {first_number_func}", -999999, 999999)
@@ -203,9 +207,57 @@ def questions_for_quiz(difficulty_func):
                 print(f"the correct answer was {answer_func}")
                 return 0
         elif what_operation == 4:
+            first_number_func = random.randint(1, 50)
+            second_number_func = random.randint(1, 50)
             first_number_func_div = first_number_func * second_number_func
             answer_func = first_number_func_div / first_number_func
             user_answer = num_check(f"What is {first_number_func_div} divided by {first_number_func}", -999999, 999999)
+            if user_answer == answer_func:
+                print("correct")
+                return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
+    elif difficulty_func == 4:
+        first_number_func = random.randint(100, 10000)
+        second_number_func = random.randint(100, 10000)
+        if what_operation == 1:
+            answer_func = first_number_func + second_number_func
+            user_answer = num_check(f"What is {first_number_func} + {second_number_func}", -100000001, 100000001)
+            if user_answer == answer_func:
+                print("correct")
+                return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
+        elif what_operation == 2:
+            answer_func = first_number_func - second_number_func
+            user_answer = num_check(f"What is {first_number_func} - {second_number_func}", -100000001, 100000001)
+            if user_answer == answer_func:
+                print("correct")
+                return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
+        elif what_operation == 3:
+            answer_func = first_number_func * second_number_func
+            user_answer = num_check(f"What is {first_number_func} multiplied by {second_number_func}", -100000001, 100000001)
+            if user_answer == answer_func:
+                print("correct")
+                return 1
+            else:
+                print("incorrect")
+                print(f"the correct answer was {answer_func}")
+                return 0
+        elif what_operation == 4:
+            first_number_func = random.randint(20, 2000)
+            second_number_func = random.randint(20, 2000)
+            first_number_func_div = first_number_func * second_number_func
+            answer_func = first_number_func_div / first_number_func
+            user_answer = num_check(f"What is {first_number_func_div} divided by {first_number_func}", -100000001, 100000001)
             if user_answer == answer_func:
                 print("correct")
                 return 1
@@ -221,21 +273,52 @@ def questions_for_quiz(difficulty_func):
 # main routine goes here
 
 statement_generator("Welcome to my mathematics test!", "--*--")
-user_answers_correct = 0
-want_instructions = yes_no("Would you like to read the instructions?")
-if want_instructions == "yes":
-    instructions()
-else:
-    pass
-difficulty = num_check('''
-What difficulty would you like? 
-1 is easy, 2 is medium, 3 is hard. ''', 0, 4)
-if difficulty == 1:
-    user_answers_correct += questions_for_quiz(1)
-    print(f"you have gotten {user_answers_correct} question(s) right")
-if difficulty == 2:
-    user_answers_correct += questions_for_quiz(2)
-    print(f"you have gotten {user_answers_correct} question(s) right")
-if difficulty == 3:
-    user_answers_correct += questions_for_quiz(3)
-    print(f"you have gotten {user_answers_correct} question(s) right")
+while True:
+    user_answers_correct = 0
+    want_instructions = yes_no("Would you like to read the instructions?")
+    if want_instructions == "yes":
+        instructions()
+    else:
+        pass
+
+    # how hard questions are
+    difficulty = num_check('''
+    What difficulty would you like? 
+    1 is easy, 2 is medium, 3 is hard. ''', 0, 5)
+
+    # how many questions
+    question_amount = num_check("How many questions would you like to answer? maximum is 50. ", 1, 51)
+    question_amount_played = 0
+    # ask questions
+    if difficulty == 1:
+        if question_amount > question_amount_played:
+            question_amount_played += 1
+            user_answers_correct += questions_for_quiz(1)
+            print(f"you have gotten {user_answers_correct} question(s) right")
+        else:
+            print("All questions have been answered. ")
+            want_history = yes_no("Would you like to see your history? ")
+            if want_history == "yes":
+                print()
+            else:
+                print("Thank you very much for playing this quiz! ")
+                play_again = input("Press <enter> to play again?")
+                if play_again == "":
+
+                else:
+                    break
+    if difficulty == 2:
+        user_answers_correct += questions_for_quiz(2)
+        print(f"you have gotten {user_answers_correct} question(s) right")
+    if difficulty == 3:
+        user_answers_correct += questions_for_quiz(3)
+        print(f"you have gotten {user_answers_correct} question(s) right")
+    if difficulty == 4:
+        impossible_mode = input("please enter password for secret impossible mode")
+        if impossible_mode == "k+c":
+            print("Welcome to impossible mode! ")
+            user_answers_correct += questions_for_quiz(4)
+            print(f"you have gotten {user_answers_correct} question(s) right")
+        else:
+            print("incorrect")
+            

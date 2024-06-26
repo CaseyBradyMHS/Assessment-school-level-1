@@ -304,7 +304,7 @@ while True:
                 print("Thank you very much for playing this quiz! ")
                 play_again = input("Press <enter> to play again?")
                 if play_again == "":
-
+                    continue
                 else:
                     break
     if difficulty == 2:
@@ -321,4 +321,4 @@ while True:
             print(f"you have gotten {user_answers_correct} question(s) right")
         else:
             print("incorrect")
-            
+            continue

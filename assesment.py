@@ -85,7 +85,7 @@ def questions_for_quiz(difficulty_func):
         if what_operation == 1:
             answer_func = first_number_func + second_number_func
             user_answer = num_check(f"What is {first_number_func} + {second_number_func}", low, high)
-
+            
             if user_answer == answer_func:
                 print("correct")
                 return 1

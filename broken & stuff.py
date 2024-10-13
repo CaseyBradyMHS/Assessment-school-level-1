@@ -116,9 +116,8 @@ def questions_for_quiz(difficulty_func):
         elif what_operation == 4:
             first_number_func = random.randint(1, 8)
             second_number_func = random.randint(1, 8)
-            first_number_func_div = first_number_func * second_number_func
-            answer_func = first_number_func_div / first_number_func
-            user_answer = num_check(f"What is {first_number_func_div} divided by {first_number_func}", low, high)
+            answer_func = second_number_func / first_number_func
+            user_answer = num_check(f"What is {first_number_func} divided by {second_number_func}", low, high)
             if user_answer == answer_func:
                 print("correct")
                 return 1
@@ -220,7 +219,7 @@ def questions_for_quiz(difficulty_func):
                 print("incorrect")
                 print(f"the correct answer was {answer_func}")
                 return 0
-    # impossible mode
+    # hidden impossible mode
     elif difficulty_func == 4:
         first_number_func = random.randint(100, 10000)
         second_number_func = random.randint(100, 10000)
@@ -372,7 +371,7 @@ What difficulty would you like?
                 break
     if difficulty == 4:
         impossible_mode = input("please enter password for secret impossible mode")
-        if impossible_mode == "c+k":
+        if impossible_mode == "k+c":
             print("Welcome to impossible mode! ")
             while question_amount > question_amount_played:
                 user_answers_correct += questions_for_quiz(4)

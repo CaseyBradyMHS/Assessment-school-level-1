@@ -77,21 +77,27 @@ def get_stats(stats_list):
 # questions generator
 def questions_for_quiz(difficulty_func):
     # says if it should be a +, -, divide or multiply
+
     what_operation = random.randint(1, 4)
     # easy mode
     max_num = 0
     min_num = 1
+    max_div_num = 0
     if difficulty_func == 1:
         max_num = 12
+        max_div_num = 10
     elif difficulty_func == 2:
         max_num = 40
+        max_div_num = 20
     elif difficulty_func == 3:
         max_num = 100
+        max_div_num = 50
     elif difficulty_func == 4:
         max_num = 9999
         min_num = 50
     first_number_func = random.randint(min_num, max_num)
     second_number_func = random.randint(min_num, max_num)
+    # addition
     if what_operation == 1:
         answer_func = first_number_func + second_number_func
         user_answer = num_check(f"What is {first_number_func} + {second_number_func}", low, high)
@@ -103,6 +109,7 @@ def questions_for_quiz(difficulty_func):
             print("incorrect")
             print(f"the correct answer was {answer_func}")
             return 0
+    # subtraction
     elif what_operation == 2:
         answer_func = first_number_func - second_number_func
         user_answer = num_check(f"What is {first_number_func} - {second_number_func}", low, high)
@@ -113,6 +120,7 @@ def questions_for_quiz(difficulty_func):
             print("incorrect")
             print(f"the correct answer was {answer_func}")
             return 0
+    # multiplication
     elif what_operation == 3:
         answer_func = first_number_func * second_number_func
         user_answer = num_check(f"What is {first_number_func} multiplied by {second_number_func}", low, high)
@@ -123,9 +131,10 @@ def questions_for_quiz(difficulty_func):
             print("incorrect")
             print(f"the correct answer was {answer_func}")
             return 0
+    # division
     elif what_operation == 4:
-        first_number_func = random.randint(min_num, max_num)
-        second_number_func = random.randint(min_num, max_num)
+        first_number_func = random.randint(min_num, max_div_num)
+        second_number_func = random.randint(min_num, max_div_num)
         first_number_func_div = first_number_func * second_number_func
         answer_func = first_number_func_div / first_number_func
         user_answer = num_check(f"What is {first_number_func_div} divided by {first_number_func}", low, high)

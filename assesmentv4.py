@@ -130,7 +130,7 @@ def difficulty_check(question):
             return 2
         elif answer == "hard" or answer == "3" or answer == "hd":
             return 3
-        elif answer == "impossible" or answer == "4" or answer == "secret" or answer == "imp":
+        elif answer == "impossible" or answer == "4" or answer == "imp":
             return 4
         else:
             print("Please enter a difficulty. ")

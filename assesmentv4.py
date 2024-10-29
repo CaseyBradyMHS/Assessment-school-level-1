@@ -81,7 +81,7 @@ In this quiz, you will get to answer mathematics questions at three different
 difficulties. The questions can be addition, subtraction, multiplication or 
 division. 
 First, you decide which difficulty you would like to play at, with 
-the options of easy (1), medium (2) and hard (3) difficulty. Then, you decide how many 
+the options of easy (1), medium (2), hard (3) and impossible (4) difficulty. Then, you decide how many 
 questions you want to answer. Do this by entering an integer (a full number) 
 which is below the maximum of fifty, and is one or more. After this, a 
 question will display. Answer the question by entering in an integer (as

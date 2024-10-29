@@ -184,19 +184,24 @@ def questions_for_quiz(difficulty_func):
     # addition, subtraction and multiplication.
     else:
         op_string = what_operation
+        # addition
         if what_operation == 1:
             answer_func = first_number_func + second_number_func
             user_answer = num_check(f"What is {first_number_func} + {second_number_func}", low, high)
             op_string = "+"
+        # subtraction
         elif what_operation == 2:
             answer_func = first_number_func - second_number_func
             user_answer = num_check(f"What is {first_number_func} - {second_number_func}", low, high)
             op_string = "-"
+        # multiplication
         elif what_operation == 3:
             answer_func = first_number_func * second_number_func
             user_answer = num_check(f"What is {first_number_func} multiplied by {second_number_func}", low, high)
             op_string = "*"
+        # error message just in case
         else:
+            print("Something has gone wrong with the program while generating the operator. ")
             answer_func = 0
             user_answer = 0
         # adds question and answer to history

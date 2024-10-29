@@ -11,13 +11,13 @@ def questions_history(question_amount_played_func, user_answers_correct_func, di
     # end loop.
     print("All questions have been answered. ")
     print(f"Your final score is {user_answers_correct_func}/{question_amount}! ")
-    # asks if want to see history.
+    # asks if user wants to see history.
     want_history = yes_no("Would you like to see your history? ")
     if want_history == "yes":
 
         show_history(question_amount, history)
 
-        # does user want to play again?
+        # does the user want to play again?
         print()
         print("Thank you very much for playing this quiz! ")
         play_again = input("Press <enter> to play again?")
@@ -26,7 +26,7 @@ def questions_history(question_amount_played_func, user_answers_correct_func, di
         else:
             return 0
     else:
-        # does user want to play again?
+        # does the user want to play again?
         print("Thank you very much for playing this quiz! ")
         play_again = input("Press <enter> to play again?")
         if play_again == "":
